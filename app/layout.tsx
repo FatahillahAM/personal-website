@@ -21,8 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Ayla Prakoso — Product & Visual Designer',
-  description: 'Ayla Prakoso is a product and visual designer crafting thoughtful brands, interfaces, and digital products that feel effortless and are built to last.',
+  title: 'Fatahillah Aditya M. — Automation Engineer & Video Editor',
+  description:
+    'Fatahillah Aditya M. is an automation engineering graduate from Universitas Diponegoro with hands-on CNC and SolidWorks experience, an IT support and networking background, and over two years of video editing and videography work.',
   generator: 'v0.app',
 }
 
