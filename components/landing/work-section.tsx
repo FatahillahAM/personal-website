@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-// NOTE: add your own images to /public and fill in the `image` field
-// (e.g. image: "/work-cnc.jpg"). While it's empty the placeholder is used.
 const projects = [
   {
     title: "CNC Machining Line",
@@ -12,17 +10,21 @@ const projects = [
     year: "2021",
     description:
       "Ran and maintained CNC machines for bus body manufacturing at CV. Laksana Carroserie, covering machine control and routine servicing.",
-    image: "",
+    image: "/work-cnc.jpg",
+    href: "#contact",
+    external: false,
     tags: ["CNC", "Maintenance"],
   },
   {
-    title: "Office IT & Server Support",
-    category: "IT Support",
-    year: "2017",
+    title: "Computer Vision-Based Line Balancing",
+    category: "Automation / Computer Vision",
+    year: "2022",
     description:
-      "Kept local computers and servers running across PT. PLN (Persero) Distribusi Jakarta Raya's office and service areas.",
-    image: "",
-    tags: ["Helpdesk", "Networking"],
+      "A vision-based system that measures work-station cycle times from video and redistributes tasks to cut bottlenecks and idle time on the production line.",
+    image: "/work-analyze.png",
+    href: "#contact",
+    external: false,
+    tags: ["Computer Vision", "Line Balancing"],
   },
   {
     title: "SolidWorks Part & Assembly Design",
@@ -30,16 +32,20 @@ const projects = [
     year: "2022",
     description:
       "Modelling, assemblies, and manufacturing drawings built during automation engineering coursework at Universitas Diponegoro.",
-    image: "",
+    image: "/work-solidworks.jpg",
+    href: "#contact",
+    external: false,
     tags: ["SolidWorks", "CAD/CAM"],
   },
   {
-    title: "Campus Event Videography",
-    category: "Video Editing",
-    year: "2019 — 2022",
+    title: "Company Profile BEM UNDIP 2020",
+    category: "Videography",
+    year: "2020",
     description:
-      "Two years of shooting and editing documentation, recaps, and promotional video for campus organisations and event committees.",
-    image: "",
+      "Shot and edited the official company profile video for BEM Universitas Diponegoro — concept, footage, and post-production. Watch it on YouTube.",
+    image: "/work-comprof.png",
+    href: "https://www.youtube.com/watch?v=wkwx5XyAEk8",
+    external: true,
     tags: ["Videography", "Editing"],
   },
 ];
@@ -62,7 +68,10 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
   return (
     <a
       ref={cardRef}
-      href="#contact"
+      href={project.href}
+      {...(project.external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
       className={`group block transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
@@ -104,6 +113,12 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       <p className="mt-4 text-muted-foreground leading-relaxed max-w-xl">
         {project.description}
       </p>
+      {project.external && (
+        <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-mono text-foreground/80 group-hover:text-foreground transition-colors">
+          Watch on YouTube
+          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </span>
+      )}
     </a>
   );
 }
@@ -138,14 +153,14 @@ export function WorkSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              What I&apos;ve
+              Projects I&apos;m
               <br />
-              worked on.
+              proud of.
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            A short selection across automation, IT support, and video. Full
-            details and footage available on request.
+            A small selection of recent work across brand, product, and systems.
+            More available on request.
           </p>
         </div>
 
