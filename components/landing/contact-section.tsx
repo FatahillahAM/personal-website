@@ -4,10 +4,22 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const socials = [
-  { name: "Email", handle: "hello@ayla.design", href: "mailto:hello@ayla.design" },
-  { name: "Instagram", handle: "@ayla.designs", href: "#" },
-  { name: "Dribbble", handle: "/aylaprakoso", href: "#" },
-  { name: "LinkedIn", handle: "/in/aylaprakoso", href: "#" },
+  {
+    name: "Email",
+    handle: "fatahiladitya7x@gmail.com",
+    href: "mailto:fatahiladitya7x@gmail.com",
+  },
+  {
+    name: "Phone / WhatsApp",
+    handle: "+62 821 1369 1610",
+    href: "https://wa.me/6282113691610",
+  },
+  {
+    name: "LinkedIn",
+    handle: "/in/fatahillaham",
+    href: "https://linkedin.com/in/fatahillaham",
+  },
+  { name: "Location", handle: "Semarang, Indonesia", href: "#" },
 ];
 
 export function ContactSection() {
@@ -40,24 +52,25 @@ export function ContactSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              Let&apos;s build
+              Let&apos;s work
               <br />
-              something.
+              together.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-md mb-8">
-              I&apos;m currently open to select freelance projects and
-              collaborations. Have an idea? I&apos;d love to hear about it.
+              I&apos;m open to roles in automation engineering, IT support, and
+              video production, as well as freelance editing work. Send me a note
+              and I&apos;ll get back to you.
             </p>
             <a
-              href="mailto:hello@ayla.design"
-              className="inline-flex items-center gap-2 text-2xl lg:text-3xl font-display border-b border-foreground/30 pb-1 hover:border-foreground transition-colors group"
+              href="mailto:fatahiladitya7x@gmail.com"
+              className="inline-flex items-center gap-2 text-2xl lg:text-3xl font-display border-b border-foreground/30 pb-1 hover:border-foreground transition-colors group break-all"
             >
-              hello@ayla.design
-              <ArrowUpRight className="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              fatahiladitya7x@gmail.com
+              <ArrowUpRight className="w-6 h-6 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
 
-          {/* Right: social links */}
+          {/* Right: contact links */}
           <div className="lg:pl-12">
             {socials.map((social, index) => (
               <a

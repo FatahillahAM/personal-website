@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 
-const words = ["design", "brand", "craft", "ship"];
+const words = ["automate", "machine", "connect", "film"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +56,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            Product &amp; Visual Designer — Jakarta, ID
+            Automation Engineer &amp; Video Editor — Semarang, ID
           </span>
         </div>
 
@@ -95,8 +95,9 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            I&apos;m Ayla — a designer crafting thoughtful brands, interfaces, and
-            digital products that feel effortless and are built to last.
+            I&apos;m Fatahillah — an automation engineering graduate working with
+            CNC machines and SolidWorks, with a background in IT support and
+            networking and over two years of video editing and videography.
           </p>
 
           <div
@@ -126,7 +127,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Client marquee - full width outside container */}
+      {/* Stat marquee - full width outside container */}
       <div
         className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
@@ -136,10 +137,10 @@ export function HeroSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "8+ yrs", label: "designing products" },
-                { value: "40+", label: "brands shaped" },
-                { value: "12", label: "design awards" },
-                { value: "5M+", label: "users reached" },
+                { value: "2+ yrs", label: "video editing & videography" },
+                { value: "3.52", label: "GPA out of 4.00, Undip" },
+                { value: "CNC", label: "operation & maintenance" },
+                { value: "BNSP", label: "certified connecting operator" },
               ].map((stat) => (
                 <div key={`${stat.label}-${i}`} className="flex items-baseline gap-4">
                   <span className="text-4xl lg:text-5xl font-display">{stat.value}</span>

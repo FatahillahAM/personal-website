@@ -3,38 +3,44 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
+// NOTE: add your own images to /public and fill in the `image` field
+// (e.g. image: "/work-cnc.jpg"). While it's empty the placeholder is used.
 const projects = [
   {
-    title: "Lumina",
-    category: "Brand Identity",
-    year: "2025",
-    description: "A complete visual identity for a fintech startup — logotype, palette, and a system built to scale across products.",
-    image: "/work-lumina.png",
-    tags: ["Branding", "Guidelines"],
+    title: "CNC Machining Line",
+    category: "Automation Engineering",
+    year: "2021",
+    description:
+      "Ran and maintained CNC machines for bus body manufacturing at CV. Laksana Carroserie, covering machine control and routine servicing.",
+    image: "",
+    tags: ["CNC", "Maintenance"],
   },
   {
-    title: "Meridian",
-    category: "Product Design",
-    year: "2024",
-    description: "End-to-end mobile app design for a travel platform, from research and flows to a polished, shippable interface.",
-    image: "/work-meridian.png",
-    tags: ["Mobile", "UX/UI"],
+    title: "Office IT & Server Support",
+    category: "IT Support",
+    year: "2017",
+    description:
+      "Kept local computers and servers running across PT. PLN (Persero) Distribusi Jakarta Raya's office and service areas.",
+    image: "",
+    tags: ["Helpdesk", "Networking"],
   },
   {
-    title: "Atlas",
-    category: "Design System",
-    year: "2024",
-    description: "A scalable component library and token system that unified design and engineering for a growing SaaS team.",
-    image: "/work-atlas.png",
-    tags: ["Design System", "Figma"],
+    title: "SolidWorks Part & Assembly Design",
+    category: "CAD / CAM",
+    year: "2022",
+    description:
+      "Modelling, assemblies, and manufacturing drawings built during automation engineering coursework at Universitas Diponegoro.",
+    image: "",
+    tags: ["SolidWorks", "CAD/CAM"],
   },
   {
-    title: "Terra",
-    category: "Web Design",
-    year: "2023",
-    description: "A refined e-commerce experience for a sustainable fashion label, balancing editorial storytelling and conversion.",
-    image: "/work-terra.png",
-    tags: ["Web", "E-commerce"],
+    title: "Campus Event Videography",
+    category: "Video Editing",
+    year: "2019 — 2022",
+    description:
+      "Two years of shooting and editing documentation, recaps, and promotional video for campus organisations and event committees.",
+    image: "",
+    tags: ["Videography", "Editing"],
   },
 ];
 
@@ -132,14 +138,14 @@ export function WorkSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Projects I&apos;m
+              What I&apos;ve
               <br />
-              proud of.
+              worked on.
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            A small selection of recent work across brand, product, and systems.
-            More available on request.
+            A short selection across automation, IT support, and video. Full
+            details and footage available on request.
           </p>
         </div>
 

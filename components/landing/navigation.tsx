@@ -48,14 +48,14 @@ export function Navigation() {
                 isScrolled ? "text-xl" : "text-2xl"
               }`}
             >
-              Ayla Prakoso
+              Fatahillah Aditya M.
             </span>
             <span
               className={`text-muted-foreground font-mono transition-all duration-500 ${
                 isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"
               }`}
             >
-              ©2025
+              ©2026
             </span>
           </a>
 

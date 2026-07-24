@@ -11,9 +11,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: "Instagram", href: "#" },
-  { name: "Dribbble", href: "#" },
-  { name: "LinkedIn", href: "#" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/fatahillaham" },
+  { name: "Email", href: "mailto:fatahiladitya7x@gmail.com" },
+  { name: "WhatsApp", href: "https://wa.me/6282113691610" },
 ];
 
 export function FooterSection() {
@@ -30,11 +30,11 @@ export function FooterSection() {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <a href="#" className="inline-flex items-center gap-2 mb-6">
-              <span className="text-2xl font-display">Ayla Prakoso</span>
+              <span className="text-2xl font-display">Fatahillah Aditya M.</span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-xs">
-              Product &amp; visual designer crafting brands and digital products
-              that feel effortless.
+              Automation engineering graduate working across CNC, SolidWorks, IT
+              support, and video production.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Ayla Prakoso. All rights reserved.
+            © 2026 Fatahillah Aditya M. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground font-mono">
             Designed &amp; built with care.

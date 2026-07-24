@@ -3,11 +3,33 @@
 import { useEffect, useRef, useState } from "react";
 
 const services = [
-  { number: "01", title: "Brand Identity", description: "Logos, visual systems, and guidelines that give companies a distinct, lasting voice." },
-  { number: "02", title: "Product Design", description: "End-to-end UX and UI for web and mobile products, from first sketch to shipped feature." },
-  { number: "03", title: "Design Systems", description: "Scalable component libraries and tokens that keep growing teams fast and consistent." },
-  { number: "04", title: "Art Direction", description: "Creative direction for campaigns, launches, and the details that make work feel considered." },
+  {
+    number: "01",
+    title: "Automation Engineering",
+    description:
+      "CNC machine operation, control, and preventive maintenance on a production floor.",
+  },
+  {
+    number: "02",
+    title: "CAD / CAM Design",
+    description:
+      "Part modelling, assemblies, and manufacturing drawings in SolidWorks.",
+  },
+  {
+    number: "03",
+    title: "IT Support & Networking",
+    description:
+      "Helpdesk, workstation and server maintenance, and network configuration with Cisco and Mikrotik.",
+  },
+  {
+    number: "04",
+    title: "Video Editing & Videography",
+    description:
+      "Two years of shooting and editing for campus organisations and event committees.",
+  },
 ];
+
+const tools = ["SolidWorks", "CNC", "CAD/CAM", "Cisco", "Mikrotik", "Video Editing"];
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,35 +60,53 @@ export function AboutSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            For nearly a decade I&apos;ve partnered with startups and studios to turn
-            complex ideas into clear, beautiful, human-centered design.
+            An automation engineering graduate who is just as comfortable behind a
+            CNC control panel as behind a camera.
           </h2>
         </div>
 
-        {/* Bio + services */}
+        {/* Photo + bio + services */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <p>
-              I believe great design is invisible — it removes friction, earns trust,
-              and quietly does its job. My work sits at the intersection of brand and
-              product, where a strong visual identity meets an interface that just
-              works.
-            </p>
-            <p>
-              I&apos;ve led design at early-stage startups, collaborated with
-              cross-functional teams, and shipped products used by millions. Whether
-              it&apos;s a wordmark or a full design system, I care about the craft in
-              every pixel.
-            </p>
-            <div className="pt-4 flex flex-wrap gap-2">
-              {["Figma", "Framer", "Webflow", "After Effects", "Blender", "Prototyping"].map((tool) => (
-                <span
-                  key={tool}
-                  className="text-sm font-mono px-3 py-1.5 border border-foreground/15 rounded-full text-foreground/80"
-                >
-                  {tool}
-                </span>
-              ))}
+          <div className="space-y-8">
+            {/* Portrait */}
+            <div
+              className={`relative overflow-hidden rounded-2xl border border-foreground/10 bg-muted aspect-square max-w-sm transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              <img
+                src="/profile.jpg"
+                alt="Portrait of Fatahillah Aditya M."
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                I graduated in Automation Engineering from Universitas Diponegoro
+                with a 3.52 GPA, after finishing vocational school in Computer and
+                Network Technology. That combination is the through-line in my
+                work: machines on one side, the systems and networks that support
+                them on the other.
+              </p>
+              <p>
+                On the shop floor at CV. Laksana Carroserie I ran and maintained CNC
+                machines. Earlier, at PT. PLN (Persero) Distribusi Jakarta Raya, I
+                handled IT helpdesk work and kept office computers and servers
+                running. Alongside all of it, I spent more than two years editing
+                video and shooting footage for campus organisations and event
+                committees.
+              </p>
+              <div className="pt-4 flex flex-wrap gap-2">
+                {tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="text-sm font-mono px-3 py-1.5 border border-foreground/15 rounded-full text-foreground/80"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 

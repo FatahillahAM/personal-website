@@ -4,29 +4,41 @@ import { useEffect, useRef, useState } from "react";
 
 const experience = [
   {
-    role: "Lead Product Designer",
-    company: "Northwind",
-    period: "2022 — Present",
-    description: "Leading product design for a B2B platform, owning the design system and mentoring a team of three designers.",
+    role: "Mechanical Engineer",
+    company: "CV. Laksana Carroserie — Semarang, Indonesia",
+    period: "Sep 2021 — Dec 2021",
+    description:
+      "Operated and controlled CNC machines on the production line, and carried out routine maintenance to keep them running.",
   },
   {
-    role: "Senior Designer",
-    company: "Studio Kava. ",
-    period: "2019 — 2022",
-    description: "Delivered brand identities and digital products for clients across fintech, travel, and consumer tech.",
+    role: "IT Helpdesk",
+    company: "PT. PLN (Persero) Distribusi Jakarta Raya — Jakarta, Indonesia",
+    period: "May 2017 — Jul 2017",
+    description:
+      "Maintained local computers across the Jakarta office and its service areas, and supported the office servers.",
+  },
+];
+
+const education = [
+  {
+    role: "Automation Engineering — GPA 3.52 / 4.00",
+    company: "Universitas Diponegoro",
+    period: "Aug 2018 — Feb 2023",
+    description:
+      "Focused on automation systems, CNC machining, and CAD/CAM design with SolidWorks.",
   },
   {
-    role: "Product Designer",
-    company: "Bloom Labs",
-    period: "2017 — 2019",
-    description: "Designed mobile-first experiences for an early-stage startup, from onboarding to core feature flows.",
+    role: "Computer and Network Technology",
+    company: "SMKN 1 Kota Tangerang",
+    period: "Aug 2015 — May 2018",
+    description:
+      "Vocational programme in computer hardware, network configuration, and IT support fundamentals.",
   },
-  {
-    role: "Visual Design Intern",
-    company: "Meridian Agency",
-    period: "2016 — 2017",
-    description: "Supported the creative team on campaigns, social, and marketing collateral for global brands.",
-  },
+];
+
+const certifications = [
+  "Connecting Operator — certified by BNSP",
+  "Visiting Lecture: Medical Robot Controlled Intelligent Assistive Technology for Handling Covid-19 — Automation Engineering, Universitas Diponegoro",
 ];
 
 function ExperienceRow({ item, index }: { item: (typeof experience)[0]; index: number }) {
@@ -103,11 +115,42 @@ export function ExperienceSection() {
           </h2>
         </div>
 
-        {/* Timeline */}
+        {/* Work timeline */}
         <div className="border-t border-foreground/10">
           {experience.map((item, index) => (
             <ExperienceRow key={item.role} item={item} index={index} />
           ))}
+        </div>
+
+        {/* Education */}
+        <div className="mt-20 lg:mt-28">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
+            <span className="w-8 h-px bg-foreground/30" />
+            Education
+          </span>
+          <div className="border-t border-foreground/10">
+            {education.map((item, index) => (
+              <ExperienceRow key={item.role} item={item} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="mt-20 lg:mt-28">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-8">
+            <span className="w-8 h-px bg-foreground/30" />
+            Certification
+          </span>
+          <ul className="border-t border-foreground/10">
+            {certifications.map((item) => (
+              <li
+                key={item}
+                className="py-6 border-b border-foreground/10 text-muted-foreground leading-relaxed max-w-3xl"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
