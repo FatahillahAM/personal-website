@@ -12,6 +12,18 @@ export async function GET() {
   const hasSupabaseKey = Boolean(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
   const hasAnthropicKey = Boolean(process.env.ANTHROPIC_API_KEY);
 
+  // The project host is already public (it ships to every browser as a
+  // NEXT_PUBLIC_ variable), so showing it here leaks nothing — and it lets you
+  // confirm the site is pointed at the same project you ran the SQL in.
+  let supabaseProject: string | null = null;
+  try {
+    supabaseProject = process.env.NEXT_PUBLIC_SUPABASE_URL
+      ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).host
+      : null;
+  } catch {
+    supabaseProject = "invalid URL — check NEXT_PUBLIC_SUPABASE_URL";
+  }
+
   const tables: Record<string, number | string> = {};
   let databaseReachable = false;
 
@@ -65,6 +77,7 @@ export async function GET() {
         NEXT_PUBLIC_SUPABASE_ANON_KEY: hasSupabaseKey,
         ANTHROPIC_API_KEY: hasAnthropicKey,
       },
+      supabaseProject,
       databaseReachable,
       rowCounts: tables,
       problems,
