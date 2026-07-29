@@ -49,7 +49,13 @@ export async function GET() {
       "Supabase keys are set but no table could be read. Run schema.sql, then seed.sql."
     );
   if (databaseReachable && tables.projects === 0)
-    problems.push("Connected, but the projects table is empty. Run seed.sql.");
+    problems.push(
+      "Connected, but every table reads as empty. Two possible causes, and they " +
+        "look identical from here: (a) the seed data was never inserted, or " +
+        "(b) the data exists but Row Level Security is blocking the anon key — " +
+        "RLS returns zero rows rather than an error. Running supabase/setup.sql " +
+        "fixes both. Its final query reports the true row counts, which bypass RLS."
+    );
 
   return Response.json(
     {
