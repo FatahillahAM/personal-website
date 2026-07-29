@@ -24,8 +24,9 @@ export async function GET() {
     supabaseProject = "invalid URL — check NEXT_PUBLIC_SUPABASE_URL";
   }
 
-  const tables: Record<string, number | string> = {};
+  const tables: Record<string, unknown> = {};
   let databaseReachable = false;
+  let anyRowsReturned = false;
 
   const db = getSupabase();
   if (db) {
@@ -38,14 +39,24 @@ export async function GET() {
       "certifications",
       "knowledge_notes",
     ]) {
-      const { count, error } = await db
+      // Actually fetch a row. Relying on the count header alone was
+      // unreliable: when it's absent the count is null, which is easy to
+      // misread as "empty". Fetching proves whether data really comes back.
+      const { data, error, count } = await db
         .from(table)
-        .select("*", { count: "exact", head: true });
+        .select("*", { count: "exact" })
+        .limit(1);
+
       if (error) {
         tables[table] = `error: ${error.message}`;
       } else {
-        tables[table] = count ?? 0;
+        const returned = data?.length ?? 0;
+        if (returned > 0) anyRowsReturned = true;
         databaseReachable = true;
+        tables[table] = {
+          reportedCount: count,
+          rowReturned: returned > 0,
+        };
       }
     }
   }
@@ -58,15 +69,13 @@ export async function GET() {
     problems.push("ANTHROPIC_API_KEY is not set — the AI assistant is disabled.");
   if (hasSupabaseUrl && hasSupabaseKey && !databaseReachable)
     problems.push(
-      "Supabase keys are set but no table could be read. Run schema.sql, then seed.sql."
+      "Supabase keys are set but no table could be read. Run supabase/setup.sql."
     );
-  if (databaseReachable && tables.projects === 0)
+  if (databaseReachable && !anyRowsReturned)
     problems.push(
-      "Connected, but every table reads as empty. Two possible causes, and they " +
-        "look identical from here: (a) the seed data was never inserted, or " +
-        "(b) the data exists but Row Level Security is blocking the anon key — " +
-        "RLS returns zero rows rather than an error. Running supabase/setup.sql " +
-        "fixes both. Its final query reports the true row counts, which bypass RLS."
+      "Connected, but no table returned a row. Confirm that the SQL was run in " +
+        `the same project the site points at (${supabaseProject}), and that the ` +
+        "anon key belongs to that same project."
     );
 
   return Response.json(
@@ -79,7 +88,8 @@ export async function GET() {
       },
       supabaseProject,
       databaseReachable,
-      rowCounts: tables,
+      anyRowsReturned,
+      tables,
       problems,
     },
     { headers: { "Cache-Control": "no-store" } }
