@@ -108,12 +108,14 @@ export function AboutSection() {
                 that ties both together.
               </p>
               <p>
-                On the shop floor at CV. Laksana Carroserie I ran and maintained CNC
-                machines. Earlier, at PT. PLN (Persero) Distribusi Jakarta Raya, I
-                handled IT helpdesk work and kept office computers and servers
-                running. Alongside all of it, I spent more than two years editing
-                video and shooting footage for campus organisations and event
-                committees.
+                I work in Industrial Engineering at PT. Fukuryo Indonesia, where
+                I analyse production processes and look for ways to make the line
+                run better. Before that, my hands-on experience came from two
+                internships: CNC machine operation and maintenance at CV. Laksana
+                Carroserie, and IT helpdesk work at PT. PLN (Persero) Distribusi
+                Jakarta Raya, keeping office computers and servers running.
+                Alongside all of it, I spent more than two years editing video and
+                shooting footage for campus organisations and event committees.
               </p>
               <div className="pt-4 flex flex-wrap gap-2">
                 {tools.map((tool) => (

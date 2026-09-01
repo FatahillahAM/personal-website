@@ -12,14 +12,22 @@ type TimelineItem = {
 
 const experience: TimelineItem[] = [
   {
-    role: "Mechanical Engineer",
+    role: "Industrial Engineering",
+    organization: "PT. Fukuryo Indonesia",
+    period: "Jun 2023 — Present",
+    // TODO: ganti dengan tanggung jawab kamu yang sebenarnya
+    description:
+      "Analysing production processes and work-station cycle times, balancing lines, and driving efficiency improvements on the factory floor.",
+  },
+  {
+    role: "Mechanical Engineer — Internship",
     organization: "CV. Laksana Carroserie — Semarang, Indonesia",
     period: "Sep 2021 — Dec 2021",
     description:
       "Operated and controlled CNC machines on the production line, and carried out routine maintenance to keep them running.",
   },
   {
-    role: "IT Helpdesk",
+    role: "IT Helpdesk — Internship",
     organization: "PT. PLN (Persero) Distribusi Jakarta Raya — Jakarta, Indonesia",
     period: "May 2017 — Jul 2017",
     description:
