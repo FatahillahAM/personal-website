@@ -27,7 +27,7 @@ const experience: TimelineItem[] = [
       "Operated and controlled CNC machines on the production line, and carried out routine maintenance to keep them running.",
   },
   {
-    role: "IT Helpdesk — Internship",
+    role: "IT Helpdesk — Vocational Internship",
     organization: "PT. PLN (Persero) Distribusi Jakarta Raya — Jakarta, Indonesia",
     period: "May 2017 — Jul 2017",
     description:
