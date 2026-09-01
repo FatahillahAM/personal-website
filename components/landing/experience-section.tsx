@@ -2,7 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const experience = [
+type TimelineItem = {
+  role: string;
+  organization: string;
+  period: string;
+  description?: string;
+  thesis?: string;
+};
+
+const experience: TimelineItem[] = [
   {
     role: "Mechanical Engineer",
     organization: "CV. Laksana Carroserie — Semarang, Indonesia",
@@ -19,7 +27,17 @@ const experience = [
   },
 ];
 
-const education = [
+const education: TimelineItem[] = [
+  {
+    role: "M.Eng. Industrial Engineering and Management — GPA 3.83 / 4.00",
+    organization: "Universitas Diponegoro",
+    period: "Jan 2024 — Aug 2026",
+    description:
+      "Graduate programme covering production systems, operations research, quality engineering, and engineering management.",
+    // TODO: ganti dengan judul & ringkasan tesis kamu yang sebenarnya
+    thesis:
+      "Thesis — Computer Vision-Based Line Balancing: a vision system that measures work-station cycle times from video footage and redistributes tasks across stations to reduce bottlenecks and idle time on the production line.",
+  },
   {
     role: "Automation Engineering — GPA 3.52 / 4.00",
     organization: "Universitas Diponegoro",
@@ -41,9 +59,7 @@ const certifications = [
   "Visiting Lecture: Medical Robot Controlled Intelligent Assistive Technology for Handling Covid-19 — Automation Engineering, Universitas Diponegoro",
 ];
 
-type ExperienceItem = (typeof experience)[0];
-
-function ExperienceRow({ item, index }: { item: ExperienceItem; index: number }) {
+function ExperienceRow({ item, index }: { item: TimelineItem; index: number }) {
   const [isVisible, setIsVisible] = useState(false);
   const rowRef = useRef<HTMLDivElement>(null);
 
@@ -79,6 +95,11 @@ function ExperienceRow({ item, index }: { item: ExperienceItem; index: number })
         {item.description && (
           <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
             {item.description}
+          </p>
+        )}
+        {item.thesis && (
+          <p className="mt-3 pl-4 border-l border-foreground/20 text-muted-foreground leading-relaxed max-w-2xl">
+            {item.thesis}
           </p>
         )}
       </div>

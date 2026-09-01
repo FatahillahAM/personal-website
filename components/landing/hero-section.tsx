@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 
-const words = ["automate", "machine", "connect", "film"];
+const words = ["automate", "machine", "optimise", "connect", "film"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +56,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            Automation Engineer &amp; Video Editor — Semarang, ID
+            Automation &amp; Industrial Engineer — Semarang, ID
           </span>
         </div>
 
@@ -95,9 +95,10 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            I&apos;m Fatahillah — an automation engineering graduate working with
-            CNC machines and SolidWorks, with a background in IT support and
-            networking and over two years of video editing and videography.
+            I&apos;m Fatahillah — an automation engineer with a master&apos;s in
+            industrial engineering and management. I work across CNC machining and
+            SolidWorks, production systems and line balancing, IT support and
+            networking, and video editing.
           </p>
 
           <div
@@ -137,8 +138,8 @@ export function HeroSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "2+ yrs", label: "video editing & videography" },
-                { value: "3.52", label: "GPA out of 4.00, Undip" },
+                { value: "M.Eng.", label: "industrial engineering & management" },
+                { value: "3.83", label: "master's GPA out of 4.00, Undip" },
                 { value: "CNC", label: "operation & maintenance" },
                 { value: "BNSP", label: "certified connecting operator" },
               ].map((stat) => (

@@ -5,31 +5,46 @@ import { useEffect, useRef, useState } from "react";
 const services = [
   {
     number: "01",
+    title: "Industrial Engineering & Management",
+    description:
+      "Production system analysis, line balancing, and process improvement on the factory floor.",
+  },
+  {
+    number: "02",
     title: "Automation Engineering",
     description:
       "CNC machine operation, control, and preventive maintenance on a production floor.",
   },
   {
-    number: "02",
+    number: "03",
     title: "CAD / CAM Design",
     description:
       "Part modelling, assemblies, and manufacturing drawings in SolidWorks.",
   },
   {
-    number: "03",
+    number: "04",
     title: "IT Support & Networking",
     description:
       "Helpdesk, workstation and server maintenance, and network configuration with Cisco and Mikrotik.",
   },
   {
-    number: "04",
+    number: "05",
     title: "Video Editing & Videography",
     description:
       "Two years of shooting and editing for campus organisations and event committees.",
   },
 ];
 
-const tools = ["SolidWorks", "CNC", "CAD/CAM", "Cisco", "Mikrotik", "Video Editing"];
+const tools = [
+  "SolidWorks",
+  "CNC",
+  "CAD/CAM",
+  "Line Balancing",
+  "Computer Vision",
+  "Cisco",
+  "Mikrotik",
+  "Video Editing",
+];
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,8 +75,9 @@ export function AboutSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            An automation engineering graduate who is just as comfortable behind a
-            CNC control panel as behind a camera.
+            An engineer who is just as comfortable behind a CNC control panel as
+            behind a camera — and now behind the numbers that run a production
+            line.
           </h2>
         </div>
 
@@ -83,11 +99,13 @@ export function AboutSection() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I graduated in Automation Engineering from Universitas Diponegoro
-                with a 3.52 GPA, after finishing vocational school in Computer and
-                Network Technology. That combination is the through-line in my
-                work: machines on one side, the systems and networks that support
-                them on the other.
+                I hold a master&apos;s in Industrial Engineering and Management
+                from Universitas Diponegoro with a 3.83 GPA, built on a bachelor&apos;s
+                in Automation Engineering from the same university and a vocational
+                background in Computer and Network Technology. That progression is
+                the through-line in my work: machines on one side, the systems and
+                networks that support them on the other, and the production process
+                that ties both together.
               </p>
               <p>
                 On the shop floor at CV. Laksana Carroserie I ran and maintained CNC
