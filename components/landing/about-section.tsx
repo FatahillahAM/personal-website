@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ScrollRevealText } from "./scroll-reveal-text";
 
 const services = [
   {
@@ -70,15 +71,11 @@ export function AboutSection() {
             <span className="w-8 h-px bg-foreground/30" />
             About
           </span>
-          <h2
-            className={`text-3xl lg:text-5xl font-display tracking-tight leading-tight max-w-4xl text-balance transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            An engineer who is just as comfortable behind a CNC control panel as
-            behind a camera — and now behind the numbers that run a production
-            line.
-          </h2>
+          <ScrollRevealText
+            as="h2"
+            className="text-3xl lg:text-5xl font-display tracking-tight leading-tight max-w-4xl text-balance"
+            text="An engineer who is just as comfortable behind a CNC control panel as behind a camera — and now behind the numbers that run a production line."
+          />
         </div>
 
         {/* Photo + bio + services */}
